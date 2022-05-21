@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Item from './Item';
 
 class ShoppingList extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class ShoppingList extends Component {
         <h1 id="heading">Shopping List</h1>
         <input id="item-textbox" type="text"></input>
         <button id="addItem-button" onClick={ this.addItem }>Add</button>
-        { this.state.items.map((item, index) => <div id={`item-${index}`} key={index}>{item}</div>) }
+        { this.state.items.map((item, index) => <Item id={index} key={index} text={item} />) }
       </div>
     )
   }

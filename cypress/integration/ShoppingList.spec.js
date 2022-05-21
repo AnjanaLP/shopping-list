@@ -10,4 +10,12 @@ describe("Shopping List", function() {
     cy.get('#addItem-button').click();
     cy.get('#item-0').should("contain", "Milk");
   });
+
+  it("can toggle a line through an item via a checkbox", function() {
+    cy.visit('/');
+    cy.get('#item-textbox').type("Milk");
+    cy.get('#addItem-button').click();
+    cy.get('#item-0-checkbox').click();
+    cy.get('#item-0').should('have.css', 'text-decoration', 'line-through solid rgb(0, 0, 0)');
+  });
 });
