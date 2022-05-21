@@ -15,3 +15,15 @@ test('add and show an item', () => {
   const itemElement = screen.getByText(/Milk/i);
   expect(itemElement).toBeInTheDocument();
 });
+
+test('clear all items', () => {
+  render(<ShoppingList />);
+  userEvent.type(screen.getByRole('textbox'), "Milk");
+  userEvent.click(screen.getByRole('button'));
+  const itemElement = screen.getByText(/Milk/i);
+  expect(itemElement).toBeInTheDocument();
+
+  userEvent.click(screen.getByRole('link'));
+
+  expect(itemElement).not.toBeInTheDocument();
+});

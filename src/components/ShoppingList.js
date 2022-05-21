@@ -14,12 +14,17 @@ class ShoppingList extends Component {
     this.setState( { items: newItems } );
   }
 
+  clearItems = () => {
+    this.setState({ items: [] });
+  }
+
   render() {
     return (
       <div>
         <h1 id="heading">Shopping List</h1>
         <input id="item-textbox" type="text"></input>
         <button id="addItem-button" onClick={ this.addItem }>Add</button>
+        <a id="shoppingList-clearLink" href="#" onClick={ this.clearItems }>Clear items</a>
         { this.state.items.map((item, index) => <Item id={index} key={index} text={item} />) }
       </div>
     )
