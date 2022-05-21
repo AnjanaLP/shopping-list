@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Item from './Item';
+import './ShoppingList.css'
 
 class ShoppingList extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class ShoppingList extends Component {
         <h1 id="heading">Shopping List</h1>
         <input id="item-textbox" type="text"></input>
         <button id="addItem-button" onClick={ this.addItem }>Add</button>
-        <a id="shoppingList-clearLink" href="#" onClick={ this.clearItems }>Clear items</a>
+        <p><a id="shoppingList-clearLink" href="#" onClick={ this.clearItems }>Clear items</a></p>
         { this.state.items.map((item, index) => <Item id={index} key={index} text={item} />) }
       </div>
     )

@@ -1,0 +1,29 @@
+#heading {
+  font-size: 50px;
+  color: grey;
+}
+
+input[type=text] {
+  box-sizing: border-box;
+  border: 2px solid grey;
+  border-radius: 4px;
+  font-size: 20px;
+  color: grey;
+  padding: 12px 20px;
+  width: 30%;
+}
+
+#addItem-button {
+  box-sizing: border-box;
+  border: 2px solid grey;
+  border-radius: 4px;
+  font-size: 20px;
+  margin-left: 10px;
+  padding: 12px 20px;
+}
+
+#shoppingList-clearLink {
+  color: red;
+  font-size: 20px;
+  text-decoration: none;
+}

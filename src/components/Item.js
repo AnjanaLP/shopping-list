@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Item.css'
 
 class Item extends Component {
   constructor(props) {
@@ -17,8 +18,8 @@ class Item extends Component {
   render() {
     return (
       <div>
-        <input id={`item-${ this.props.id }-checkbox`} type="checkbox" onChange={ this.handleLineThrough }></input>
         <span id={`item-${ this.props.id }`} style={{ textDecoration: this.state.textDecoration }}>{ this.props.text }</span>
+        <input id={`item-${ this.props.id }-checkbox`} type="checkbox" onChange={ this.handleLineThrough }></input>
       </div>
     )
   }
