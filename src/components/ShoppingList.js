@@ -12,6 +12,7 @@ class ShoppingList extends Component {
     const newItems = this.state.items;
     newItems.push(item);
     this.setState( { items: newItems } );
+    this._clearInput();
   }
 
   clearItems = () => {
@@ -28,6 +29,10 @@ class ShoppingList extends Component {
         { this.state.items.map((item, index) => <Item id={index} key={index} text={item} />) }
       </div>
     )
+  }
+
+  _clearInput() {
+    document.getElementById('item-textbox').value = "";
   }
 }
 

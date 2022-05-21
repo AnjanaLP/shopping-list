@@ -16,6 +16,13 @@ test('add and show an item', () => {
   expect(itemElement).toBeInTheDocument();
 });
 
+test('clears the input after clicking the add button', () => {
+  render(<ShoppingList />);
+  userEvent.type(screen.getByRole('textbox'), "Milk");
+  userEvent.click(screen.getByRole('button'));
+  expect(screen.getByRole('textbox')).toHaveValue("");
+});
+
 test('clear all items', () => {
   render(<ShoppingList />);
   userEvent.type(screen.getByRole('textbox'), "Milk");
