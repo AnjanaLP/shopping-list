@@ -15,7 +15,7 @@ describe("Shopping List", function() {
   it("can toggle a line through an item via a checkbox", function() {
     addMilk();
     cy.get('#item-0-checkbox').click();
-    cy.get('#item-0').should('have.css', 'text-decoration', 'line-through solid rgb(0, 0, 0)');
+    cy.get('#item-0').should('have.css', 'text-decoration', 'line-through solid rgb(128, 128, 128)');
   });
 
   it("can clear all the items", function() {
